@@ -3,8 +3,8 @@
  * app.js: Fetches config.json and renders the entire site at runtime.
  *
  * HOW TO RUN (required — fetch() is blocked on file:// protocol):
- *   From the project root: python -m http.server 8080
- *   Then open: http://localhost:8080/src/
+ *   From the project root: python -m http.server 8081
+ *   Then open: http://localhost:8081/
  *
  * To swap clients: edit config.json only. No HTML or JS changes needed.
  */
@@ -318,7 +318,7 @@
       }).join('');
 
       panel.innerHTML =
-        '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:0 4rem">' +
+        '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:2rem 4rem">' +
         items + '</div>';
 
       panelsEl.appendChild(panel);
@@ -365,6 +365,22 @@
          <img src="${esc(s.icon)}" alt="${esc(s.platform)}" class="social-icon" />
        </a>`
     ).join('');
+  }
+
+  /* ------------------------------------------------------------------
+     8b. RENDER FLOATING WHATSAPP BUTTON
+     Builds the wa.me deep link and reveals the button with a short
+     delay so it doesn't compete with the hero entrance animation.
+  ------------------------------------------------------------------ */
+  function renderFloatingWhatsApp(whatsapp) {
+    var btn = $('whatsapp-float');
+    if (!btn || !whatsapp || !whatsapp.number) return;
+    var url = 'https://wa.me/' + esc(whatsapp.number) +
+              '?text=' + encodeURIComponent(whatsapp.message || '');
+    btn.href = url;
+    btn.setAttribute('aria-label', whatsapp.label || 'Chat on WhatsApp');
+    // Delay reveal so it pops in after the hero has settled
+    setTimeout(function () { btn.classList.add('is-ready'); }, 1200);
   }
 
   /* ------------------------------------------------------------------
@@ -475,19 +491,20 @@
     renderMenu(config.menu);
     renderReservations(config.reservations);
     renderFooter(config.footer);
+    renderFloatingWhatsApp(config.reservations.whatsapp);
     initBehaviors();
   }
 
   /* ------------------------------------------------------------------
      BOOTSTRAP
-     Fetches ../config.json relative to src/index.html.
-     From http://localhost:PORT/src/ this resolves to http://localhost:PORT/config.json.
+     Fetches config.json relative to index.html (project root).
+     From http://localhost:PORT/ this resolves to http://localhost:PORT/config.json.
 
      Start the server from the PROJECT ROOT (the folder containing config.json):
        python -m http.server 8081
-     Then open: http://localhost:8081/src/
+     Then open: http://localhost:8081/
   ------------------------------------------------------------------ */
-  fetch('../config.json')
+  fetch('config.json')
     .then(function (res) {
       if (!res.ok) {
         throw new Error(

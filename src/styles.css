@@ -435,3 +435,45 @@ ul, ol {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* ----------------------------------------------------------------
+   14. FLOATING WHATSAPP BUTTON
+   ---------------------------------------------------------------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: background-color 0.2s ease, transform 0.2s ease,
+              opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.2s ease;
+  pointer-events: none;
+}
+
+.whatsapp-float.is-ready {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+}

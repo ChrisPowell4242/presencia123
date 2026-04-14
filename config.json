@@ -2,7 +2,7 @@
   "meta": {
     "siteTitle": "Fine Dining Chicago",
     "description": "Colombians finest — A premier fine dining experience in the heart of the city. Prime aged cuts, intimate ambiance, impeccable service.",
-    "favicon": "../assets/images/logo.svg"
+    "favicon": "assets/images/logo.svg"
   },
 
   "theme": {
@@ -19,7 +19,7 @@
   "brand": {
     "restaurantName": "Colombians finest",
     "tagline": "Aged to Perfection. Served with Distinction.",
-    "logo": "../assets/images/logo.svg",
+    "logo": "assets/images/logo.svg",
     "logoAlt": "Colombians finest"
   },
 
@@ -34,7 +34,7 @@
   },
 
   "hero": {
-    "backgroundImage": "../assets/images/hero.jpg",
+    "backgroundImage": "assets/images/hero.jpg",
     "headline": "Where Every Cut Tells a Story",
     "subheadline": "Prime aged steaks. Intimate ambiance. Chicago's finest table.",
     "cta1Label": "Reserve Your Table",
@@ -51,7 +51,7 @@
       "James Sterling opened these doors in 1984 with a single conviction: that great beef, handled with patience and precision, needs no embellishment. Only time. He built Sterling & Co. not as a restaurant, but as a declaration — that Chicago deserved a table worthy of its ambition.",
       "The kitchen runs on obsession. Each cut arrives whole, selected from ranches we have worked with for decades, then dry-aged on-premises until the enzymes have done what no sauce can replicate. The room temperature never varies. The lighting never changes. Every detail is an argument for the same point: that pleasure, at this level, is a discipline."
     ],
-    "image": "../assets/images/about.jpg",
+    "image": "assets/images/about.jpg",
     "imageAlt": "The Sterling & Co. dining room at dusk"
   },
 
@@ -187,12 +187,12 @@
       {
         "platform": "Instagram",
         "href": "https://instagram.com",
-        "icon": "../assets/icons/instagram.svg"
+        "icon": "assets/icons/instagram.svg"
       },
       {
         "platform": "Facebook",
         "href": "https://facebook.com",
-        "icon": "../assets/icons/facebook.svg"
+        "icon": "assets/icons/facebook.svg"
       }
     ]
   }
