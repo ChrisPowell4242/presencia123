@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "siteTitle": "Fine Dining Chicago",
+    "description": "Colombians finest — A premier fine dining experience in the heart of the city. Prime aged cuts, intimate ambiance, impeccable service.",
+    "favicon": "../assets/images/logo.svg"
+  },
+
+  "theme": {
+    "colorBg": "#0a0a0a",
+    "colorSurface": "#111111",
+    "colorText": "#f5f0eb",
+    "colorTextMuted": "#9e9e9e",
+    "accentColor": "#c9a96e",
+    "fontHeading": "Playfair Display",
+    "fontBody": "Inter",
+    "navHeight": "72px"
+  },
+
+  "brand": {
+    "restaurantName": "Colombians finest",
+    "tagline": "Aged to Perfection. Served with Distinction.",
+    "logo": "../assets/images/logo.svg",
+    "logoAlt": "Colombians finest"
+  },
+
+  "nav": {
+    "links": [
+      { "label": "Our Story", "href": "#about" },
+      { "label": "Menu", "href": "#menu" },
+      { "label": "Reservations", "href": "#reservations" }
+    ],
+    "ctaLabel": "Reserve a Table",
+    "ctaHref": "#reservations"
+  },
+
+  "hero": {
+    "backgroundImage": "../assets/images/hero.jpg",
+    "headline": "Where Every Cut Tells a Story",
+    "subheadline": "Prime aged steaks. Intimate ambiance. Chicago's finest table.",
+    "cta1Label": "Reserve Your Table",
+    "cta1Href": "#reservations",
+    "cta2Label": "Explore the Menu",
+    "cta2Href": "#menu",
+    "overlayOpacity": 0.58
+  },
+
+  "about": {
+    "eyebrow": "Heritage & Craft",
+    "headline": "Forty Years of Disciplined Obsession",
+    "body": [
+      "James Sterling opened these doors in 1984 with a single conviction: that great beef, handled with patience and precision, needs no embellishment. Only time. He built Sterling & Co. not as a restaurant, but as a declaration — that Chicago deserved a table worthy of its ambition.",
+      "The kitchen runs on obsession. Each cut arrives whole, selected from ranches we have worked with for decades, then dry-aged on-premises until the enzymes have done what no sauce can replicate. The room temperature never varies. The lighting never changes. Every detail is an argument for the same point: that pleasure, at this level, is a discipline."
+    ],
+    "image": "../assets/images/about.jpg",
+    "imageAlt": "The Sterling & Co. dining room at dusk"
+  },
+
+  "menu": {
+    "eyebrow": "The Menu",
+    "headline": "Crafted Without Compromise",
+    "categories": [
+      {
+        "id": "starters",
+        "label": "Starters",
+        "items": [
+          {
+            "name": "Oysters Rockefeller",
+            "description": "Six oysters, creamed spinach, house-made hollandaise, crispy pancetta.",
+            "price": "$28"
+          },
+          {
+            "name": "Wagyu Carpaccio",
+            "description": "A5 wagyu, black truffle oil, shaved parmesan, capers, grilled crostini.",
+            "price": "$34"
+          },
+          {
+            "name": "French Onion Gratinée",
+            "description": "48-hour caramelized onion broth, gruyère, sourdough crouton.",
+            "price": "$19"
+          },
+          {
+            "name": "Lobster Bisque",
+            "description": "Maine lobster, cognac cream, chive oil, brioche croutons.",
+            "price": "$22"
+          }
+        ]
+      },
+      {
+        "id": "steaks",
+        "label": "The Steaks",
+        "items": [
+          {
+            "name": "Prime Ribeye — 16oz",
+            "description": "28-day dry-aged, bone-in, compound herb butter, roasted garlic jus.",
+            "price": "$78"
+          },
+          {
+            "name": "Filet Mignon — 8oz",
+            "description": "USDA prime center-cut, wrapped in applewood bacon, cabernet reduction.",
+            "price": "$68"
+          },
+          {
+            "name": "Tomahawk — 32oz",
+            "description": "Dry-aged 45 days. For two. A spectacle and a meal.",
+            "price": "$145"
+          },
+          {
+            "name": "New York Strip — 14oz",
+            "description": "Prime black angus, house steak spice, béarnaise on request.",
+            "price": "$65"
+          }
+        ]
+      },
+      {
+        "id": "sides",
+        "label": "Sides",
+        "items": [
+          {
+            "name": "Truffle Potato Gratin",
+            "description": "Yukon gold, black truffle cream, aged gruyère, crisp top.",
+            "price": "$16"
+          },
+          {
+            "name": "Creamed Spinach",
+            "description": "Classic Chicago style, nutmeg, heavy cream, shallots.",
+            "price": "$12"
+          },
+          {
+            "name": "Roasted Wild Mushrooms",
+            "description": "Forager's mix, thyme butter, toasted breadcrumb.",
+            "price": "$14"
+          },
+          {
+            "name": "Bone Marrow Butter Rolls",
+            "description": "House-baked, roasted bone marrow butter, fleur de sel.",
+            "price": "$11"
+          }
+        ]
+      },
+      {
+        "id": "desserts",
+        "label": "Desserts",
+        "items": [
+          {
+            "name": "Chocolate Fondant",
+            "description": "Valrhona 70%, warm liquid center, Madagascar vanilla bean ice cream.",
+            "price": "$18"
+          },
+          {
+            "name": "Crème Brûlée",
+            "description": "Tahitian vanilla, house-torched, seasonal berry compote.",
+            "price": "$15"
+          },
+          {
+            "name": "Cheese Selection",
+            "description": "Three artisan cheeses, honeycomb, candied walnuts, membrillo.",
+            "price": "$24"
+          }
+        ]
+      }
+    ]
+  },
+
+  "reservations": {
+    "eyebrow": "Reservations",
+    "headline": "Secure Your Evening",
+    "body": "We recommend reserving at least one week in advance. For parties of six or more, please contact us directly.",
+    "ctaLabel": "Book via OpenTable",
+    "ctaHref": "https://www.opentable.com",
+    "whatsapp": {
+      "number": "13125550187",
+      "message": "Hello, I'd like to make a reservation at Colombians finest.",
+      "label": "Message Us on WhatsApp"
+    }
+  },
+
+  "footer": {
+    "copyright": "© 2026 Colombians finest. All rights reserved.",
+    "address": "875 N Michigan Ave, Chicago, IL 60611",
+    "phone": "+1 (312) 555-0187",
+    "email": "reservations@lumierechicago.com",
+    "links": [
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Menu PDF", "href": "#" }
+    ],
+    "social": [
+      {
+        "platform": "Instagram",
+        "href": "https://instagram.com",
+        "icon": "../assets/icons/instagram.svg"
+      },
+      {
+        "platform": "Facebook",
+        "href": "https://facebook.com",
+        "icon": "../assets/icons/facebook.svg"
+      }
+    ]
+  }
+}

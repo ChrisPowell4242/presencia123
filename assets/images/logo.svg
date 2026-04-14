@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" fill="none">
+  <!-- Ornament left -->
+  <line x1="0" y1="24" x2="18" y2="24" stroke="#c9a96e" stroke-width="0.75"/>
+  <circle cx="21" cy="24" r="2" fill="#c9a96e"/>
+
+  <!-- Wordmark: STERLING & CO. -->
+  <text
+    x="30"
+    y="29"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="16"
+    font-weight="400"
+    letter-spacing="4"
+    fill="#f5f0eb"
+  >STERLING &amp; CO.</text>
+
+  <!-- Ornament right -->
+  <circle cx="199" cy="24" r="2" fill="#c9a96e"/>
+  <line x1="202" y1="24" x2="220" y2="24" stroke="#c9a96e" stroke-width="0.75"/>
+</svg>

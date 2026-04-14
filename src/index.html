@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" id="meta-description" content="" />
+  <title id="page-title">Loading…</title>
+  <link id="favicon-link" rel="icon" type="image/svg+xml" href="" />
+
+  <!-- Open Graph — injected by app.js from config.meta -->
+  <meta property="og:type"        content="restaurant" />
+  <meta property="og:title"       content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image"       content="" />
+  <meta property="og:url"         content="" />
+
+  <!-- Twitter Card — injected by app.js from config.meta -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="" />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:image"       content="" />
+
+  <!-- Google Fonts: href injected by app.js after reading config.theme -->
+  <link id="google-fonts-link" rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link id="google-fonts-stylesheet" rel="stylesheet" href="" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind config: extend with CSS var references. Must come AFTER CDN script. -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent:  'var(--color-accent)',
+            surface: 'var(--color-surface)',
+          },
+          fontFamily: {
+            heading: ['var(--font-heading)'],
+            body:    ['var(--font-body)'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="overflow-x-hidden">
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header id="nav" class="fixed top-0 left-0 right-0 z-50">
+    <nav
+      class="max-w-7xl mx-auto px-6 flex items-center justify-between"
+      style="height: var(--nav-height)"
+      aria-label="Main navigation"
+    >
+      <!-- Logo / Brand name (text rendered from config.brand.restaurantName) -->
+      <a href="#" id="nav-logo-link">
+        <img id="nav-logo" src="" alt="" class="h-9 w-auto" />
+        <span id="nav-brand-name" class="nav-brand-name"></span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul id="nav-links" class="hidden md:flex items-center gap-10" role="list"></ul>
+
+      <!-- Desktop Reserve CTA -->
+      <a id="nav-cta" href="" class="hidden md:inline-flex btn-primary py-3 px-6 text-xs"></a>
+
+      <!-- Hamburger button (mobile) -->
+      <button
+        id="hamburger"
+        class="md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 items-center"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile full-screen drawer (visibility controlled by .is-open, not display) -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-40 flex flex-col items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+    >
+      <!-- Close button -->
+      <button
+        id="mobile-close"
+        class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center"
+        aria-label="Close navigation menu"
+        style="color: var(--color-text-muted); font-size: 1.25rem; letter-spacing: 0.05em"
+      >
+        &#x2715;
+      </button>
+
+      <ul id="mobile-nav-links" class="flex flex-col items-center gap-9 mb-10" role="list"></ul>
+      <div class="mobile-nav-cta-wrap">
+        <a id="mobile-nav-cta" href="" class="btn-primary"></a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section
+    id="hero"
+    class="relative flex items-center justify-center overflow-hidden"
+    aria-label="Hero"
+  >
+    <!-- Background image -->
+    <div
+      id="hero-bg"
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-fade-in"
+      role="presentation"
+    ></div>
+
+    <!-- Overlay -->
+    <div id="hero-overlay" class="absolute inset-0" role="presentation"></div>
+
+    <!-- Content: each child animates independently for a cinematic stagger -->
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto" style="padding-top: var(--nav-height)">
+
+      <!-- Ornament: first to appear -->
+      <div class="ornament-divider hero-ornament mb-8">
+        <span>&#10022;</span>
+      </div>
+
+      <h1
+        id="hero-headline"
+        class="hero-headline-anim font-heading text-5xl md:text-6xl lg:text-7xl leading-tight mb-5"
+        style="color: var(--color-text)"
+      ></h1>
+
+      <p
+        id="hero-subheadline"
+        class="hero-sub-anim text-base md:text-lg tracking-wide mb-10"
+        style="color: var(--color-text-muted); max-width: 40ch; margin-left: auto; margin-right: auto"
+      ></p>
+
+      <div class="hero-ctas-anim flex flex-col sm:flex-row gap-4 justify-center">
+        <a id="hero-cta1" href="" class="btn-primary"></a>
+        <a id="hero-cta2" href="" class="btn-outline"></a>
+      </div>
+
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <span class="text-xs tracking-widest uppercase" style="color: var(--color-text-muted); font-size: 0.6rem; letter-spacing: 0.25em">Scroll</span>
+      <div class="w-px h-10" style="background: var(--color-border)"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about" class="py-24 md:py-36 px-6" aria-labelledby="about-headline">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+      <!-- Text column -->
+      <div class="animate-on-scroll">
+        <span id="about-eyebrow" class="eyebrow-text mb-4"></span>
+        <h2
+          id="about-headline"
+          class="font-heading text-4xl md:text-5xl leading-tight mt-4 mb-8"
+          style="color: var(--color-text)"
+        ></h2>
+        <div
+          id="about-body"
+          class="space-y-5 text-base md:text-lg leading-relaxed"
+          style="color: var(--color-text-muted)"
+        ></div>
+      </div>
+
+      <!-- Image column -->
+      <div class="animate-on-scroll">
+        <img
+          id="about-image"
+          src=""
+          alt=""
+          class="w-full object-cover"
+          style="height: 480px; max-height: 60vh"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       MENU
+       ============================================================ -->
+  <section
+    id="menu"
+    class="py-24 md:py-36 px-6"
+    style="background-color: var(--color-surface)"
+    aria-labelledby="menu-headline"
+  >
+    <div class="max-w-5xl mx-auto">
+
+      <!-- Heading -->
+      <div class="text-center mb-14 animate-on-scroll">
+        <span id="menu-eyebrow" class="eyebrow-text mb-4"></span>
+        <h2
+          id="menu-headline"
+          class="font-heading text-4xl md:text-5xl mt-4"
+          style="color: var(--color-text)"
+        ></h2>
+        <div class="ornament-divider mt-6">
+          <span>&#10022;</span>
+        </div>
+      </div>
+
+      <!-- Tab buttons — injected by app.js -->
+      <div
+        id="menu-tabs"
+        role="tablist"
+        aria-label="Menu categories"
+        class="flex flex-wrap justify-center gap-0 border-b mb-12"
+        style="border-color: var(--color-border)"
+      ></div>
+
+      <!-- Tab panels — injected by app.js -->
+      <div id="menu-panels"></div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       RESERVATIONS
+       ============================================================ -->
+  <section id="reservations" class="py-24 md:py-36 px-6" aria-labelledby="res-headline">
+    <div class="max-w-2xl mx-auto text-center animate-on-scroll">
+
+      <span id="res-eyebrow" class="eyebrow-text mb-4"></span>
+      <h2
+        id="res-headline"
+        class="font-heading text-4xl md:text-5xl mt-4 mb-6"
+        style="color: var(--color-text)"
+      ></h2>
+      <p
+        id="res-body"
+        class="text-base md:text-lg leading-relaxed mb-10"
+        style="color: var(--color-text-muted)"
+      ></p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a id="res-cta" href="" target="_blank" rel="noopener noreferrer" class="btn-primary"></a>
+        <a id="res-whatsapp" href="" target="_blank" rel="noopener noreferrer" class="btn-outline"></a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer
+    id="footer"
+    class="py-16 px-6"
+    style="border-top: 1px solid var(--color-border)"
+    aria-label="Footer"
+  >
+    <div class="max-w-7xl mx-auto">
+
+      <div class="grid md:grid-cols-3 gap-12 mb-12">
+
+        <!-- Brand column -->
+        <div>
+          <a href="#" aria-label="Back to top">
+            <img id="footer-logo" src="" alt="" class="h-8 mb-5" />
+          </a>
+          <address class="not-italic space-y-1.5">
+            <p id="footer-address" class="text-sm" style="color: var(--color-text-muted)"></p>
+            <p id="footer-phone" class="text-sm" style="color: var(--color-text-muted)"></p>
+            <p id="footer-email" class="text-sm" style="color: var(--color-text-muted)"></p>
+          </address>
+        </div>
+
+        <!-- Links column -->
+        <div class="flex flex-col justify-between">
+          <ul id="footer-links" class="flex flex-col gap-3" role="list"></ul>
+        </div>
+
+        <!-- Social column -->
+        <div>
+          <p class="eyebrow-text mb-5">Follow Us</p>
+          <div id="footer-social" class="flex gap-5"></div>
+        </div>
+
+      </div>
+
+      <!-- Copyright bar -->
+      <div style="border-top: 1px solid var(--color-border)" class="pt-8">
+        <p id="footer-copyright" class="text-xs tracking-wide" style="color: var(--color-text-muted); letter-spacing: 0.06em"></p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
